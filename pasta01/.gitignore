@@ -1,0 +1,13 @@
+# ex.png
+# Makefile.win
+# pasta01.o
+# Project1.dev
+# Project1.layout
+# Project1.exe
+
+*.png
+*.win
+*.o
+*.dev
+*.layout
+*.exe
