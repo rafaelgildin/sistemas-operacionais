@@ -39,8 +39,8 @@ int leitura_teclado (void) {
       if (linha[n] == '\n') break;
       n = n + 1;
    }
-   for (int i = 0; i <= n; i += 1)
-      putchar (linha[i]);
+//   for (int i = 0; i <= n; i += 1)
+//    putchar (linha[i]);
    return EXIT_SUCCESS;
 }
 
@@ -73,6 +73,27 @@ int leitura_arquivo (void) {
     return 0;
 }
 
+
+void cp(char* arquivos[]){
+	// aponta para os arquivos
+	FILE *arquivo1, *arquivo2;
+	//le os dois arquivos
+	arquivo1 = fopen(arquivos[1], "r");
+	arquivo2 = fopen(arquivos[2], "w");
+	//faz a checagem para achar os arquivos
+	if (arquivo1 == NULL || arquivo2 == NULL){
+		printf("Um dos arquivos, ou ambos, infelizmente não pode ser aberto =c ");
+	}
+	//itera por um arquivo e vai escrevendo no outro até chegar no fim do arquivo(EOF)
+	char caractere;
+	while((caractere=fgetc(arquivo1)) != EOF){
+		fputc(caractere,arquivo2);
+	};
+	//fecha os dois arquivos
+	fclose(arquivo1);
+	fclose(arquivo2);
+}
+
 void entrada() {
     while(true){
         
@@ -83,10 +104,11 @@ void entrada() {
         printf("********************************************************************\n");
         printf("Digite o comando:\n");
         printf("(cat) leitura de um arquivo\n");
+        printf("(cp) copia de um arquivo para o outro\n");
         printf("(exit) sair do compilador\n");
         printf("*******************************************************************\n\n");
 
-        // char comando[50];
+        char comando[50];
         // printf("$");
         // scanf("%s", comando);
         // printf("Comando = %s\n", comando); //digitar o comando
@@ -95,6 +117,15 @@ void entrada() {
         //     leitura_arquivo();
         //     break;
         // }
+        if(comando == "cp"){
+        	char nome_arquivo_1[250];
+        	char nome_arquivo_2[250];
+        	printf("Digite o nome do arquivo que você quer copiar: \n");
+        	scanf("%s", &nome_arquivo_1);
+        	printf("Digite o nome do arquivo para onde você quer copiar: \n");
+        	scanf("%s", &nome_arquivo_2);
+        	cp([nome_arquivo_1, nome_arquivo_2])
+		}
         // else{
         //     printf("comando invalido!! \n\n\n\n\n\n\n\n");
         // }
@@ -110,6 +141,7 @@ int main () {
     https://cboard.cprogramming.com/c-programming/48313-if-statements-using-strings-condition.html
     geeksforgeeks.org/c-program-to-read-contents-of-whole-file/
     https://www.geeksforgeeks.org/basic-input-and-output-in-c/
+    https://flaviocopes.com/c-null/
     */
     entrada();
     return 0;
