@@ -8,9 +8,9 @@
 
 * Comando cat:
     * Comando cat executado com sucesso:
-    ![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com sucesso:")
+![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com sucesso:")
     * Comando cat executado com falha:
-    ![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com falha:")
+![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com falha:")
 
 * Comando cp:
     * Comando cp executado com sucesso:
