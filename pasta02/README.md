@@ -8,17 +8,17 @@
 
 * Comando cat:
     * Comando cat executado com sucesso:
-![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com sucesso:")
+        * ![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com sucesso:")
     * Comando cat executado com falha:
-![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com falha:")
+        * ![Alt text](imagens/cat_ok.png?raw=true "Comando cat executado com falha:")
 
 * Comando cp:
     * Comando cp executado com sucesso:
-    ![Alt text](imagens/cp_ok.png?raw=true "Comando cp executado com sucesso:")
+        * ![Alt text](imagens/cp_ok.png?raw=true "Comando cp executado com sucesso:")
     * Comando cp executado com falha, devido ao nome do arquivo de entrada:
-    ![Alt text](imagens/cp_entrada_nok.png?raw=true "Comando cp executado com falha, devido ao nome do arquivo de entrada:")
+        * ![Alt text](imagens/cp_entrada_nok.png?raw=true "Comando cp executado com falha, devido ao nome do arquivo de entrada:")
     * Comando cp executado com falha, devido ao nome do arquivo de saída:
-    ![Alt text](imagens/cp_saida_nok.png?raw=true "Comando cp executado com falha, devido ao nome do arquivo de saída:")
+        * ![Alt text](imagens/cp_saida_nok.png?raw=true "Comando cp executado com falha, devido ao nome do arquivo de saída:")
 
 * Comando exit:
-    ![Alt text](imagens/exit.png?raw=true "Comando exit:")
+    * ![Alt text](imagens/exit.png?raw=true "Comando exit:")
