@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 int cp(void){
-    FILE *arquivo1, *arquivo2_leitura, *arquivo2_escrita; // aponta para os arquivos
+    FILE *arquivo1, *arquivo2_leitura, *arquivo2_escrita; //SO aponta para os arquivos
     char nome_arquivo_1[50], nome_arquivo_2[50];
 
     printf("Arquivo de entrada: ");
@@ -13,8 +13,8 @@ int cp(void){
     scanf("%s", nome_arquivo_2);
     
 	//le os dois arquivos
-	arquivo1 = fopen(nome_arquivo_1, "r");
-    arquivo2_leitura = fopen(nome_arquivo_2, "r");
+	arquivo1 = fopen(nome_arquivo_1, "r"); //SO
+    arquivo2_leitura = fopen(nome_arquivo_2, "r");//SO
 
     //faz a checagem para achar os arquivos
 	if (arquivo1 == NULL){
@@ -25,31 +25,29 @@ int cp(void){
 		printf("Ja existe um arquivo com o nome do arquivo de saida.\n");
         return 0;
 	}
-    arquivo2_escrita = fopen(nome_arquivo_2, "w");
+    arquivo2_escrita = fopen(nome_arquivo_2, "w");//SO
 
 	//itera por um arquivo e vai escrevendo no outro ate chegar no fim do arquivo(EOF)
     char caractere;
-	while((caractere=fgetc(arquivo1)) != EOF){
-		fputc(caractere,arquivo2_escrita);
+	while((caractere=fgetc(arquivo1)) != EOF){//SO
+		fputc(caractere,arquivo2_escrita);//SO
 	};
 	//fecha os dois arquivos
-    fclose(arquivo1);
-	fclose(arquivo2_escrita);
-    fclose(arquivo2_leitura);
+    fclose(arquivo1); fclose(arquivo2_escrita);fclose(arquivo2_leitura);//SO
     printf("Arquivo copiado com sucesso!\n");
     return 0;
 }
 
 
 int cat (void) {
-    FILE* ptr;
+    FILE* ptr;//SO
     char ch, nome_arquivo[50];
 
     printf("nome do arquivo: ");
     scanf("%s", nome_arquivo);
 
     // Abrindo o arquivo no modelo de leitura
-    ptr = fopen(nome_arquivo, "r");
+    ptr = fopen(nome_arquivo, "r");//SO
  
     if (NULL == ptr) {
         printf("O arquivo nao pode ser aberto\n");
@@ -60,7 +58,7 @@ int cat (void) {
     // caracter por caracter usando o loop
     printf("O conteudo do arquivo eh: \n");
     do {
-        ch = fgetc(ptr);
+        ch = fgetc(ptr);//SO
         printf("%c", ch);
  
         // Verificar se caracter nao eh EOF(end of file).
@@ -68,7 +66,7 @@ int cat (void) {
     } while (ch != EOF);
  
     // Fechando o arquivo.
-    fclose(ptr);
+    fclose(ptr);//SO
     return 0;
 }
 
