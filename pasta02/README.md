@@ -1,6 +1,8 @@
 * Alunos: 
     * Rafael Avraham Gildin Acherboim - 31940242
     * Pedro Carvalho - 41910974
+    * Victor Cunha Leite Goulart de Araujo - 42031729
+    * João Pedro Rodrigues Alves - 42083605
 
 * Usamos a Visual Studio Code : https://code.visualstudio.com/
 * Como compilar e executar o programa na plataforma disponibilizada: Pressionar o botão triangular "run code", no canto superior direito da IDE.
