@@ -7,3 +7,4 @@
 * Como compilar e executar o programa na plataforma disponibilizada: Pressionar o botão triangular "run code", no canto superior direito da IDE.
 * Como comprovar que os resultados propostos foram alcançados: Disponibilizamos as imagens de compilação e execução.
 * 1: As mensagens sempre estão ordenadas.
+ 
