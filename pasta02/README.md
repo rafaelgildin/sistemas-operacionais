@@ -6,4 +6,4 @@
 * Usamos a Visual Studio Code : https://code.visualstudio.com/
 * Como compilar e executar o programa na plataforma disponibilizada: Pressionar o botão triangular "run code", no canto superior direito da IDE.
 * Como comprovar que os resultados propostos foram alcançados: Disponibilizamos as imagens de compilação e execução.
-* Representamos a chamada de SO no código pelo comentário //OS. 
+* 1: As mensagens sempre estão ordenadas.
