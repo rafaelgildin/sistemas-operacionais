@@ -3,7 +3,7 @@
     * Victor Cunha Leite Goulart de Araujo - 42031729
     * João Pedro Rodrigues Alves - 42083605
 
-* Usamos a Visual Studio Code : https://code.visualstudio.com/
-* Como compilar e executar o programa na plataforma disponibilizada: Pressionar o botão triangular "run code", no canto superior direito da IDE.
-* Como comprovar que os resultados propostos foram alcançados: Disponibilizamos as imagens de compilação e execução.
-* 1: As mensagens sempre estão ordenadas. 
+* 1: As mensagens sempre estão ordenadas pelo valor de i:
+    * ![Alt text](imagens/ex1.png?raw=true " ")
+* 2: Não há mudanças:
+    * ![Alt text](imagens/ex2.png?raw=true " ")
