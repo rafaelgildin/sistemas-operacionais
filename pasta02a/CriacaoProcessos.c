@@ -9,6 +9,5 @@ int main(void){
 		printf("I am process %ld and my x is %d\n", (long)getpid(), x);
 	return 0;
 } 
-
 // gcc -o criacaoProcessos.bin criacaoProcessos.c 
 // ./criacaoProcessos.bin
