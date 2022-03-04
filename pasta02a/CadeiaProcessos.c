@@ -1,8 +1,9 @@
-// gcc CadeiaProcessos.c -o CadeiaProcessos1
-// ./CadeiaProcessos
+//gcc CadeiaProcessos.c -o CadeiaProcessos1
+//./CadeiaProcessos
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 int main (int argc, char *argv[]) {
     pid_t childpid = 0;
     int i, n;
