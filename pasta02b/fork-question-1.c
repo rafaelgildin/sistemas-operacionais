@@ -5,6 +5,7 @@ clear && gcc fork-question-1.c -o fork-question-1 && ./fork-question-1  && echo
 Um processo não pode invadir o espaco de memoria do outro
 Objetivo: alteração do processo filho se reflita no processo pai. Logo o 
           ultimo print deve ser: PARENT: value = 20
+
 */
 #include <stdio.h>
 #include <sys/types.h>
