@@ -110,7 +110,7 @@ void * filosofo ( void * vparam )
 {
    int * id = (int *) (vparam);   //Repassa o id do filósofo
    printf("Filosofo %d foi criado com sucesso\n", *(id) );
-   while (1)//enquanto todos os filosofos não estiverem alimentados
+   while (1)
    {
       pensar( *(id) );         //Aguarda o filósofo pensar
       pegar_hashi( *(id) );      //Filósofo pega os hashis
