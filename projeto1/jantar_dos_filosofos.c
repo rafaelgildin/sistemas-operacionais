@@ -2,6 +2,7 @@
 executar no terminal:
    gcc -o jantar_dos_filosofos.o jantar_dos_filosofos.c -pthread && ./jantar_dos_filosofos.o 
    http://wiki.icmc.usp.br/images/7/76/Aula06_2.pdf
+   https://www.vivaolinux.com.br/script/Jantar-dos-Filosofos-Programacao-Paralela
 */
 #include <pthread.h>
 #include <stdio.h>
