@@ -2,68 +2,57 @@
 // clear && gcc main.c -o main && ./main
 #define _GNU_SOURCE
 #include <stdlib.h>
-#include <malloc.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
 #include <sched.h>
 #include <stdio.h>
+#include <pthread.h>
 
-// 64kB stack
-#define FIBER_STACK 1024*64
+pthread_mutex_t the_mutex;
+int buffer = 0; /* buffer usado entre produtor e consumidor */
+int valor_consumidor = 0;
+int valor_produtor = 0;
+
 struct c {
     int saldo;
 };
+
 typedef struct c conta;
 conta from, to;
 int valor;
 
-// The child thread will execute this function
-int transferencia( void *arg)
-{
-    // travar a regiao critica
-    if (from.saldo >= valor){ // 2
+void * sacar(void *ptr){//valor, thread
+    int valor = 1;
+    if (from.saldo >= valor){
+        // printf("i: from = %d | to = %d\n", from.saldo, to.saldo);
         from.saldo -= valor;
         to.saldo += valor;
+        printf("f: from = %d | to = %d\n", from.saldo, to.saldo);
     }
-    printf("\nTransferencia concluida com sucesso | from = %d | to = %d \n", from.saldo, to.saldo);
     return 0;
 }
-int main()
-{
-    void* stack; // ponteiro sem tipo definido
-    pid_t pid;
-    printf("\n\npocess id = %d\n\n", pid);
-    int i;
 
-    // Allocate the stack
-    stack = malloc( FIBER_STACK );
-    if ( stack == 0 )
-    {
-        perror("malloc: could not allocate stack");
-        exit(1);
-    }
-
+int main(int argc, char **argv){
     // Todas as contas começam com saldo 100
     from.saldo = 100;
-    to.saldo = 100;
+    to.saldo = 0;
+    int i;
+    pthread_t con;//inicializa as threads do consumidor
     printf( "Transferindo 10 para a conta c2(to)\n" );
     valor = 10;
-
-    // return 0;
-    for (i = 8; i < 10; i++) {
-        // Call the clone system call to create the child thread
-        pid = clone( &transferencia, (char*) stack + FIBER_STACK,
-        SIGCHLD | CLONE_FS | CLONE_FILES | CLONE_SIGHAND | CLONE_VM, 0 );
-        if ( pid == -1 )
-        {
-            printf("\nerror in clone\n");
-            perror( "clone" );
-            exit(2);
-        }
+    pthread_mutex_init(&the_mutex, 0);
+    
+    for (i = 0; i < 100; i++) {
+        pthread_create(&con, 0, sacar, 0);
+        // printf("thread %d criada\n", i);
     }
-    // Free the stack
-    free( stack );
-    printf("Transferencias concluidas e memoria liberada.\n");
-    return 0;
+
+    while(to.saldo < 100){
+        pthread_join(con, 0);
+    }
+
+    pthread_mutex_destroy(&the_mutex);
+    printf("final main: from = %d | to = %d\n", from.saldo, to.saldo);
+
 }
