@@ -1,9 +1,8 @@
-* Projeto 1: O jantar dos filósofos 
+* Projeto 2: Concorrência entre processos
 
 * Aluno: 
     * Rafael Avraham Gildin Acherboim - 31940242
 
 * a: Foto da execução do programa:
-    * ![Alt text](imagens/ex.png?raw=true " ")
-
-* b: No códgo explico como é resolvido o problema da comunicação inter processos (IPC).
+    * ![Alt text](imagens/ex1.png?raw=true "Execução 1-50")
+    * ![Alt text](imagens/ex2.png?raw=true "Execução 51-100")
