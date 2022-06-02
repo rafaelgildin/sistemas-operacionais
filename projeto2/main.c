@@ -82,6 +82,8 @@ int main(int argc, char **argv){
             pthread_join(threads[i], 0);//executa as threads
         }
     }
-    pthread_mutex_destroy(&the_mutex);//destroi o mutex
+    
     printf("final main:\nSaldos:\nfrom = %d | to = %d\n", from.saldo, to.saldo);
+    pthread_exit(NULL);//exclui as threads
+    pthread_mutex_destroy(&the_mutex);//destroi o mutex
 }
