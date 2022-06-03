@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <pthread.h>
 
-pthread_mutex_t the_mutex; //cira o mutex para a thread acessar a regiao critica
+pthread_mutex_t the_mutex; //cria o mutex para a thread acessar a regiao critica
 int N_THREADS = 100, TO_TO=0, TO_FROM=0;
 
 struct c {
@@ -69,6 +69,9 @@ int main(int argc, char **argv){
 
     // cria as threads
     for (i = 0; i < N_THREADS; i++) {
+        
+        //pthread_create(&threads[i], 0, to_to, &valor);//thread from->to
+        
         if(i < n_threads_to_to){
             pthread_create(&threads[i], 0, to_to, &valor);//thread from->to
         }
@@ -76,6 +79,7 @@ int main(int argc, char **argv){
             pthread_create(&threads[i], 0, to_from, &valor);//thread to->from
         }
     }
+
 
     for (i = 0; i < N_THREADS; i++) {
         for (j = 0; j < 1000; j++) {//loop extra para testar o programa na exaustao
